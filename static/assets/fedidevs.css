@@ -259,3 +259,10 @@ aside.toc li li {
 #toc-current > ol.toc ol.toc {
     display: none;
 }
+
+.undef::before {
+    content: "UNKNOWN PAGEREF: ";
+}
+.undef {
+    color: red !important;
+}
