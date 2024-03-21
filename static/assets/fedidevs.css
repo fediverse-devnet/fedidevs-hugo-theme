@@ -88,18 +88,6 @@ header img.logo {
     height: 32px;
 }
 
-header nav.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 3em;
-    font-size: var( --header-font-size );
-    font-weight: 500;
-}
-
-header nav.menu li {
-    display: inline-block;
-}
 header > div.container {
     display: flex;
     flex-wrap: nowrap;
