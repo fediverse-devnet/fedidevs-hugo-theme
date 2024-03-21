@@ -2,7 +2,8 @@
 
 #page-nav {
     text-align: right;
-    position: relative; /* so we can do an absolute child */
+    /* so we can do an absolute child */
+    position: relative;
     font-size: 87.5%;
 }
 
@@ -10,6 +11,21 @@
 #hamburger {
     display: none;
 }
+
+/* menu in wide display */
+nav.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: var(--header-font-size);
+    font-weight: 500;
+}
+
+nav.menu ul {
+    display: flex;
+    flex-direction: row;
+}
+
 
 /* main menu items */
 
@@ -20,13 +36,12 @@
 }
 
 #page-nav li {
-    /* styling regardless of mode */
     margin: 0;
     padding: 5px 10px;
     box-sizing: border-box;
 }
 
-#page-nav > ul > li {
+#page-nav>ul>li {
     /* when wide display, no hamburger */
     display: inline-block;
 }
@@ -51,42 +66,40 @@
 
 /* when display narrow, hamburger */
 @media screen and (max-width: 905px) {
+
+    /** Hamburger icon **/
     #page-nav label {
+        cursor: pointer;
         display: inline-block;
         font-style: normal;
         font-size: 30px;
-        line-height: 18px;
         text-align: center;
         position: relative;
-        top: -3px;
+
+        /** Make tap target larger on mobile devices **/
+        padding: 0px 10px;
     }
 
-    #page-nav ul {
-        /* styling */
-        text-align: left;
-        position: absolute;
-        right: 10%;
-        border: 1px solid #c0c0c0;
-        border-radius: 5px;
-        background: #fff;
-        z-index: 100;
-        margin-top: 0;
+    /* Spacing in mobile display */
+    #page-nav li {
+        padding: 10px 15px;
+    }
 
-        /* when input not checked */
+    /* menu in mobile display -- not open */
+    nav.menu {
         display: none;
     }
-    #page-nav input:checked ~ ul {
-        /* when input checked */
-        display: block;
+
+    /* menu in mobile display -- open */
+    input:checked~nav.menu {
+        background-color: var(--header-background-color);
+        display: flex;
+        position: absolute;
+        right: 0;
+        flex-direction: column;
     }
 
-    #page-nav > ul > li {
-        display: block;
-    }
-
-    /* sub-menu */
-    #page-nav li:hover ul {
-        display: block;
-        left: 20%;
+    input:checked~nav.menu ul {
+        flex-direction: column;
     }
 }
