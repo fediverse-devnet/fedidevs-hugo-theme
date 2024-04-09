@@ -187,11 +187,19 @@ thead tr {
 tbody tr:nth-child(2n) {
     background: var( --table-stripe-background-color );
 }
-pre {
+code {
     font: var( --code-font );
     background: var( --code-background );
-    padding: 1em;
     overflow-x: auto;
+    padding: 3px 1ex;
+}
+pre {
+    padding: 1em;
+    background: var( --code-background );
+}
+pre > code {
+    background: none;
+    padding: 0;
 }
 
 aside.toc {
