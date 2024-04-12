@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap');
+
 :root {
     --header-background-color: rgb( 36, 37, 38 );
     --footer-background-color: rgb( 48, 56, 70 );
@@ -20,7 +22,7 @@
     --table-header-background-color: #ffffff08;
     --table-stripe-background-color: #ffffff08;
 
-    --code-font: 16px/1.4 "SFMono-Regular", Menlo, Monaco;
+    --code-font: 14px/1.4 "Noto Sans Mono";
     --code-background: rgb( 40, 42, 54 );
 
 }
@@ -36,7 +38,7 @@ body {
     background: var( --background-color );
     color: var( --base-font-color );
     font-family: var( --base-font );
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 table {
@@ -69,6 +71,9 @@ h2 {
     line-height: 125%;
 }
 
+p {
+    margin: 1.2em 0;
+}
 a.ext:after {
     content: url( "/assets/ext.svg" );
     margin-left: 1ex;
