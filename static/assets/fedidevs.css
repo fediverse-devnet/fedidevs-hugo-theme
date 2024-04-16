@@ -22,7 +22,7 @@
     --table-header-background-color: #ffffff08;
     --table-stripe-background-color: #ffffff08;
 
-    --code-font: 14px/1.4 "Noto Sans Mono";
+    --code-font: 16px/1.4 ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
     --code-background: rgb( 40, 42, 54 );
 
 }
