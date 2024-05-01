@@ -8,8 +8,12 @@
   <p class="subtitle main">{{ . }}</p>
 {{   end }}
 
+{{ with .Params.summary }}
+  <p class="summary main">{{ . }}</p>
+{{   end }}
+
 {{ if .Params.author }}
-  <p class="author main">By 
+  <p class="author main">By
 {{   with .Params.authorurl }}<a href="{{ . }}">{{ end }}{{ .Params.author }}{{ with .Params.authorurl }}</a>{{ end }}
 </p>
 {{ else }}

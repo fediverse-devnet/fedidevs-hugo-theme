@@ -1,7 +1,7 @@
 {{- $tag   := .Get 0 -}}
 {{- $label := .Get 1 -}}
-{{- with .Site.GetPage ( printf "/glossary/%s.md" ( $tag )) -}}
-<a class="term" title="Click for definition in the glossary" href="/glossary/{{ lower $tag }}/">
+{{- with .Site.GetPage ( printf "/docs/glossary/%s.md" ( $tag )) -}}
+<a class="term" title="Click for definition in the glossary" href="/docs/glossary/{{ lower $tag }}/">
 {{-     if $label -}}
 {{-         $label -}}
 {{-     else -}}
