@@ -152,6 +152,7 @@ nav#breadcrumbnav li {
 }
 nav#breadcrumbnav li + li::before {
     content: "\00BB";
+    margin: 0 0.5ex;
 }
 nav#breadcrumbnav li.path a {
     color: var( --base-font-color );
