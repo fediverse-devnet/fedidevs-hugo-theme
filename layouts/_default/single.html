@@ -18,16 +18,26 @@
 
   <div class="content">
 {{     .Content }}
-  </div>
-{{   with .Params.seealso }}
- <h3>See also:</h3>
- <ul class="seealso">
-{{     range . }}
-  <li>{{ . }}</li>
-{{     end }}
- </ul>
-{{   end }}
 
+{{   with .Params.seealsoterm }}
+   <div class="seealsoterm">
+    <p>Related glossary entries:</p>
+    <ul>
+{{     range . }}
+     <li>
+{{-      $tag := . -}}
+{{-      with $.Site.GetPage ( printf "/glossary/%s.md" ( $tag )) -}}
+     <a class="term" title="Click for definition in the glossary" href="/glossary/{{ $tag }}/">
+{{-        .Title -}}
+     </a>
+{{-      else -}}
+      <span class="undef">{{ $tag }}</span>
+{{-      end -}}
+     </li>
+{{     end }}
+    </ul>
+   </div>
+{{   end }}
  </article>
 {{ end }}
 </main>

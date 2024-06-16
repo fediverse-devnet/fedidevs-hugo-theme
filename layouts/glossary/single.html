@@ -31,6 +31,9 @@
 {{ partial "categories.html" . }}
 
   <div class="content">
+{{ with .Params.summary }}
+   <p>{{ . }}</p>
+{{ end }}
 {{ .Content }}
   </div>
 {{ partial "discuss.html" . }}

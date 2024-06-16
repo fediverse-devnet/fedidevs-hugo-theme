@@ -1,0 +1,16 @@
+{{ $n := or ( .Get 0 ) 5 }}
+{{ $releaseNotes := where .Site.RegularPages "Section" "release-notes" }}
+{{ $blogPosts := where .Site.RegularPages "Section" "blog" }}
+{{ $both := slice }}
+{{ range $releaseNotes }}
+{{     $both = $both | append . }}
+{{ end }}
+{{ range $blogPosts }}
+{{     $both = $both | append . }}
+{{ end }}
+{{ $mostRecent := $both.ByLastmod.Reverse | first $n }}
+<ul class="range-ul range-ul-date">
+{{- range $mostRecent }}
+ <li>{{ time.Format "Jan 02, 2006" .Date }}: <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{- end}}
+</ul>

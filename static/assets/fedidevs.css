@@ -6,24 +6,29 @@
 
     --base-font: system-ui;
 
+    --color-1: rgb( 37, 194, 160 );
+    --h1-color: var(--color-1);
+    --h2-color: var(--color-1);
+    --href-color: var(--color-1);
+    --warn-color: rgb( 255, 100, 100 );
+
     --base-font-color: rgb( 227, 227, 227 );
-    --heading-font-color: rgb( 227, 227, 227 );
+    --background-color: rgb( 27, 27, 29 );
+    --heading-font-color: var(--color-1);
+
 
     --header-font-size: 16px;
 
     --breadcrumb-font-size: 12px;
-
-    --href-color: rgb( 37, 194, 160 );
-
-    --background-color: rgb( 27, 27, 29 );
 
     --table-border-color: #606770;
     --table-background-color: var( --background-color );
     --table-header-background-color: #ffffff08;
     --table-stripe-background-color: #ffffff08;
 
-    --code-font: 16px/1.4 ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-    --code-background: rgb( 40, 42, 54 );
+    --code-font: 14px/1.4 ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+    --code-color: var(--color-2);
+    --code-background-color: rgb( 40, 42, 54 );
 
 }
 
@@ -60,19 +65,27 @@ footer {
 
 h1, h2, h3, h4, h5 {
     color: var(--heading-font-color);
+    line-height: 110%;
 }
 
 h1 {
+    color: var(--h1-color);
     font-size: 3rem;
-    line-height: 125%;
 }
+h1:first-of-type {
+    margin-top: 0;
+}
+
 h2 {
+    color: var(--h2-color);
     font-size: 2rem;
-    line-height: 125%;
+}
+h3 {
+    font-size: 1.5rem;
 }
 
 p {
-    margin: 1.2em 0;
+    margin: 1.5em 0;
 }
 a.ext:after {
     content: url( "/assets/ext.svg" );
@@ -81,6 +94,21 @@ a.ext:after {
 a:hover {
     color: var( --href-color );
     text-decoration: underline;
+}
+
+article,
+section {
+    margin-top: 3em;
+}
+article > p.date {
+    margin: 0;
+}
+
+li {
+    margin: 1ex 0;
+}
+dt {
+    font-weight: 700;
 }
 
 header div.title,
@@ -103,9 +131,6 @@ header div.nav-tagline {
     flex-grow: 1;
 }
 
-h1 a,
-h2 a,
-h3 a,
 header a,
 footer a {
     color: var( --base-font-color );
@@ -120,6 +145,7 @@ footer > div.container,
 main {
     max-width: 980px;
     margin: 0 auto;
+    padding: 0 2ex;
 }
 
 main {
@@ -158,7 +184,9 @@ nav#breadcrumbnav li.path a {
     color: var( --base-font-color );
 }
 
-p.main.author,
+p.main.author {
+}
+
 p.main.source {
     display: none;
 }
@@ -183,13 +211,17 @@ tbody tr:nth-child(2n) {
 }
 code {
     font: var( --code-font );
+    color: var( --code-color );
     background: var( --code-background );
     overflow-x: auto;
-    padding: 3px 1ex;
+    padding: 3px 0.2ex;
 }
 pre {
     padding: 1em;
-    background: var( --code-background );
+    color: var( --code-color );
+    background: var( --code-background-color );
+    display: flow-root;
+    overflow: scroll;
 }
 pre > code {
     background: none;
@@ -268,3 +300,39 @@ aside.toc li li {
 .undef {
     color: red !important;
 }
+
+div.admonition {
+    margin: 2em 0;
+    border: 1px solid #808080;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flow-root;
+}
+
+div.warning p.admonition-title {
+    margin-top: 1ex;
+    color: var(--warn-color);
+    font-size: 120%;
+}
+div.warning {
+    border-color: var(--warn-color);
+}
+
+ul.pager {
+    margin: 0;
+    padding: 0;
+    height: 2em;
+}
+ul.pager li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ul.pager li.newer {
+    float: left;
+}
+ul.pager li.older {
+    float: right;
+    margin-right: 2em;
+}
+
