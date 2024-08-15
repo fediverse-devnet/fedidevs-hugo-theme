@@ -165,6 +165,21 @@ footer li {
     list-style: none;
 }
 
+div.slide-in-img {
+    max-width: 25%;
+}
+div.slide-in-img img {
+    width: 100%;
+}
+div.slide-in-img-left {
+    float: left;
+    margin: 0 30px 30px 0;
+}
+div.slide-in-img-right {
+    float: right;
+    margin: 0 0 30px 30px;
+}
+
 nav#breadcrumbnav ol {
     list-style-type: none;
     margin: 0;
