@@ -3,6 +3,8 @@
 :root {
     --header-background-color: rgb( 36, 37, 38 );
     --footer-background-color: rgb( 48, 56, 70 );
+    --overview-background-color: rgb( 36, 37, 38 );
+    --overview-border-color: rgb( 56, 57, 58 );
 
     --base-font: system-ui;
 
@@ -15,7 +17,8 @@
     --base-font-color: rgb( 227, 227, 227 );
     --background-color: rgb( 27, 27, 29 );
     --heading-font-color: var(--color-1);
-
+    --heading-font-color: rgb( 227, 227, 227 );
+    --deemphasize-font-color: rgb( 140, 140, 140 );
 
     --header-font-size: 16px;
 
@@ -152,8 +155,8 @@ main {
     min-height: min( 600px, 60vh );
 }
 
-footer {
-    padding-left: 20%;
+footer, footer a {
+    color: var( --deemphasize-font-color );
 }
 footer ul {
     margin: 0;
@@ -161,8 +164,11 @@ footer ul {
 }
 
 footer li {
-    margin-left: 0;
+    padding-left: 0;
     list-style: none;
+}
+footer img {
+    filter: brightness(.5);
 }
 
 div.slide-in-img {
@@ -196,10 +202,7 @@ nav#breadcrumbnav li + li::before {
     margin: 0 0.5ex;
 }
 nav#breadcrumbnav li.path a {
-    color: var( --base-font-color );
-}
-
-p.main.author {
+    color: var( --deemphasize-font-color );
 }
 
 p.main.source {
@@ -248,8 +251,10 @@ aside.toc {
     width: 220px;
     margin: 0 0 20px 20px;
     padding: 0 0 8px 16px;
-    border-left: var( --table-border-color ) 1px solid;
+    background: var( --overview-background-color );
+    border-left: var( --overview-border-color ) 1px solid;
     font-size: 90%;
+    color: var( --deemphasize-font-color );
 }
 
 aside.toc * {
@@ -303,7 +308,7 @@ aside.toc li li {
     display: block;
 }
 #toc-current > a {
-    font-weight: bold;
+    color: var( --base-font-color );
 }
 #toc-current > ol.toc ol.toc {
     display: none;
