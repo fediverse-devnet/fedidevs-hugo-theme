@@ -2,7 +2,7 @@
    <ul class="range-ul range-ul-date">
 {{ range $p }}
     <li>
-     {{ time.Format "Jan 02, 2006" .Date }}:
+     <span class="when">{{ time.Format "2006-01-02" .Date }}:</span>
      <a href="{{ .Permalink }}">{{ .Title }}</a>
     </li>
 {{ end }}

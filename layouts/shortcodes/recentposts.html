@@ -11,6 +11,6 @@
 {{ $mostRecent := $both.ByDate.Reverse | first $n }}
 <ul class="range-ul range-ul-date">
 {{- range $mostRecent }}
- <li>{{ time.Format "Jan 02, 2006" .Date }}: <a href="{{ .Permalink }}">{{ .Title }}</a></li>
+ <li><span class="when">{{ time.Format "2006-01-02" .Date }}:</span> <a href="{{ .Permalink }}">{{ .Title }}</a></li>
 {{- end}}
 </ul>
