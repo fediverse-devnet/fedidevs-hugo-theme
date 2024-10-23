@@ -4,7 +4,7 @@
 {{ $current := .current }}
 {{   if .root.Pages }}
  <ol{{ if not .nottop }} id="toc"{{ end }} class="toc">
-{{     range .root.Pages.ByWeight }}
+{{     range where .root.Pages.ByWeight "Params.display" "!=" "hide"}}
   <li{{ if eq . $current }} id="toc-current"{{ end }} class="toc">
    <a href="{{ .Permalink }}">{{ .Title }}</a>
 {{       template "toc-recursive" ( dict "root" . "current" $current "nottop" 1 ) }}
