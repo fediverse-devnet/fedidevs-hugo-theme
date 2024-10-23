@@ -82,6 +82,10 @@ h1:first-of-type {
 h2 {
     color: var(--h2-color);
     font-size: 2rem;
+    margin-top: 1.5em
+}
+h1 + h2 {
+    margin-top: 0;
 }
 h3 {
     font-size: 1.5rem;
@@ -116,7 +120,7 @@ dt {
 
 header div.title,
 header div.logo {
-    margin: 12px 20px;
+    margin: 12px 20px 12px 0;
     font-weight: 700;
 }
 header img.logo {
@@ -246,6 +250,11 @@ pre > code {
     padding: 0;
 }
 
+blockquote {
+    margin-left: 2em;
+    padding-left: 2em;
+    border-left: 3px solid var(--base-font-color);
+}
 aside.toc {
     float: right;
     width: 220px;
@@ -289,6 +298,10 @@ aside.toc > ol > li > a {
 
 aside.toc li li {
     margin-left: 2ex;
+}
+
+article.glossary .summary {
+    font-weight: 700;
 }
 
 #toc ol.toc,
