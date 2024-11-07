@@ -41,7 +41,7 @@ nav.menu ul {
     box-sizing: border-box;
 }
 
-#page-nav>ul>li {
+#page-nav > ul > li {
     /* when wide display, no hamburger */
     display: inline-block;
 }
