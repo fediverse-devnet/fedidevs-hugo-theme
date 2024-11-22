@@ -151,16 +151,29 @@ header > div.container,
 footer > div.container,
 main {
     max-width: 980px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 2ex;
 }
 
+footer > div.container {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer p {
+    margin: 0.5ex 0;
+}
 main {
     min-height: min( 600px, 60vh );
 }
 
 footer, footer a {
     color: var( --deemphasize-font-color );
+}
+footer a:hover {
+    color: var( --href-color );
 }
 footer ul {
     margin: 0;
@@ -369,3 +382,9 @@ ul.pager li.older {
     margin-right: 2em;
 }
 
+
+/* when display narrow, hamburger */
+@media screen and (max-width: 860px) {
+   footer div.container {
+       flex-direction: column;
+   }
